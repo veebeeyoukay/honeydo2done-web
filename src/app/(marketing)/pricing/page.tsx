@@ -232,7 +232,7 @@ export default function PricingPage() {
                   <span className="text-4xl font-bold text-navy">
                     ${plan.price}
                   </span>
-                  {plan.priceOriginal && (
+                  {'priceOriginal' in plan && plan.priceOriginal && (
                     <>
                       <span className="text-xl text-slate line-through ml-2">
                         ${plan.priceOriginal}
