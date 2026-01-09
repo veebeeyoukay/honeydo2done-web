@@ -52,31 +52,39 @@ export async function POST(request: NextRequest) {
     }
 
     // Store in Supabase
-    const supabase = createServerClient()
-    const { error } = await supabase
-      .from('email_leads')
-      .insert({
-        email: email.toLowerCase().trim(),
-        source: source || 'unknown',
-        utm_source: utm_source || null,
-        utm_medium: utm_medium || null,
-        utm_campaign: utm_campaign || null,
-      })
+    try {
+      const supabase = createServerClient()
+      const { error } = await supabase
+        .from('email_leads')
+        .insert({
+          email: email.toLowerCase().trim(),
+          source: source || 'unknown',
+          utm_source: utm_source || null,
+          utm_medium: utm_medium || null,
+          utm_campaign: utm_campaign || null,
+        })
 
-    if (error) {
-      // If it's a duplicate email error, that's okay - we'll return success
-      if (error.code === '23505') {
-        return NextResponse.json({ success: true, message: 'Email already registered' })
+      if (error) {
+        // If it's a duplicate email error, that's okay - we'll return success
+        if (error.code === '23505') {
+          return NextResponse.json({ success: true, message: 'Email already registered' })
+        }
+
+        console.error('Supabase error:', error)
+        return NextResponse.json(
+          { error: 'Failed to save email. Please try again.' },
+          { status: 500 }
+        )
       }
 
-      console.error('Supabase error:', error)
+      return NextResponse.json({ success: true, message: 'Email saved successfully' })
+    } catch (error) {
+      console.error('Email API error:', error)
       return NextResponse.json(
-        { error: 'Failed to save email. Please try again.' },
+        { error: 'Internal server error' },
         { status: 500 }
       )
     }
-
-    return NextResponse.json({ success: true, message: 'Email saved successfully' })
   } catch (error) {
     console.error('Email API error:', error)
     return NextResponse.json(

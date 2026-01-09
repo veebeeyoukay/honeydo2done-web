@@ -29,9 +29,13 @@ export const Analytics: React.FC = () => {
     document.head.appendChild(script)
 
     // Initialize gtag
-    window.dataLayer = window.dataLayer || []
+    if (!window.dataLayer) {
+      window.dataLayer = []
+    }
     function gtag(...args: any[]) {
-      window.dataLayer.push(args)
+      if (window.dataLayer) {
+        window.dataLayer.push(args)
+      }
     }
     window.gtag = gtag
     gtag('js', new Date())
