@@ -1,0 +1,76 @@
+:root {
+  /* Brand Colors */
+  --color-honey-gold: #F5A623;
+  --color-deep-honey: #D4920E;
+  --color-soft-honey: #FFF3E0;
+  --color-trust-navy: #1E3A5F;
+  --color-soft-slate: #64748B;
+  --color-cloud-white: #FAFBFC;
+  --color-success-green: #10B981;
+  --color-alert-coral: #F87171;
+  --color-info-sky: #38BDF8;
+  --color-progress-purple: #A78BFA;
+
+  /* Spacing Scale (8px base) */
+  --space-0: 0px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+  --space-9: 48px;
+  --space-10: 64px;
+  --space-11: 80px;
+  --space-12: 96px;
+  --space-13: 128px;
+
+  /* Border Radius */
+  --radius-none: 0px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-level-1: 0 1px 2px 0 rgba(30, 58, 95, 0.05);
+  --shadow-level-2: 0 1px 3px 0 rgba(30, 58, 95, 0.1), 0 1px 2px -1px rgba(30, 58, 95, 0.1);
+  --shadow-level-3: 0 4px 6px -1px rgba(30, 58, 95, 0.1), 0 2px 4px -2px rgba(30, 58, 95, 0.1);
+  --shadow-level-4: 0 10px 15px -3px rgba(30, 58, 95, 0.1), 0 4px 6px -4px rgba(30, 58, 95, 0.1);
+  --shadow-level-5: 0 20px 25px -5px rgba(30, 58, 95, 0.1), 0 8px 10px -6px rgba(30, 58, 95, 0.1);
+  --shadow-honey-glow: 0 0 0 3px rgba(245, 166, 35, 0.3);
+  --shadow-inset: inset 0 2px 4px 0 rgba(30, 58, 95, 0.1);
+
+  /* Transitions */
+  --duration-instant: 100ms;
+  --duration-fast: 150ms;
+  --duration-normal: 200ms;
+  --duration-slow: 300ms;
+  --duration-slower: 400ms;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Typography */
+  --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-outfit: 'Outfit', 'Inter', sans-serif;
+}
+
+/* Gradients */
+.honey-gradient {
+  background: linear-gradient(135deg, #F5A623 0%, #D4920E 100%);
+}
+
+.warm-glow-gradient {
+  background: linear-gradient(180deg, #FAFBFC 0%, #FFF3E0 100%);
+}
+
+.trust-gradient {
+  background: linear-gradient(135deg, #1E3A5F 0%, #2D4A6F 100%);
+}
