@@ -4,10 +4,11 @@
 
 [build.environment]
   NODE_VERSION = "20"
+  NEXT_PRIVATE_STANDALONE = "true"
 
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/.netlify/functions/next"
   status = 200
 
 [[headers]]
